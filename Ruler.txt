@@ -1,0 +1,27 @@
+using namespace std;
+
+void subdivide(char*, int,int,int);
+int main() {
+	char ruler[66];
+	int i,level=0;
+	int max = 66 - 1, min = 0;;
+	for (i = 0; i < 66-1; i++) {		
+		ruler[i] = ' ';
+	}
+	ruler[65] = '\0';
+	ruler[0] = '|'; ruler[64] = '|';
+	cout << ruler << endl;
+	for (int i = 0; i < 6; i++) {
+		subdivide(ruler, i, min, max);
+		cout << ruler << endl;
+	}
+
+	return 0 ^ 0;
+}
+void subdivide(char* ruler,int t,int  left,int right) {
+	if (t < 0)return;
+	int mid = (left + right) / 2;
+	ruler[mid] = '|';
+	subdivide(ruler, t - 1, left, mid);
+	subdivide(ruler, t - 1, mid, right);
+}
