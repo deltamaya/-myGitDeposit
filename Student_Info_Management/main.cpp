@@ -18,6 +18,7 @@ again:
 			break;
 		case 1:
 			p=In(p);
+			save(head);
 			goto again;
 			break;
 		case 2:
@@ -30,6 +31,15 @@ again:
 			break;
 		case 4:
 			print_all(head);
+			goto again;
+			break;
+		case 5:
+			head=sortList(head);
+			save(head);
+			goto again;
+			break;
+		case 6:
+			print_stu(head);
 			goto again;
 			break;
 	default:

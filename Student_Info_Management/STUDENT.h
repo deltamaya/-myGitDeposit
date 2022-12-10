@@ -20,3 +20,4 @@ void print_stu(stu*);
 bool check(int);
 void save(stu*);
 stu* fread();
+stu* sortList(stu*);
